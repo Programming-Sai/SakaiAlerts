@@ -350,7 +350,7 @@ class Sakai_Scrapper(Screen):
                     self.list_item.bind(on_release=lambda instance, link=alert['link'], alert_type=alert['type'], alert_body=alert['body']: self.open_popup(link, alert_type, alert_body))
 
                     add(self.result_list, self.list_item)
-                    notification.notify(title=alert['type'], message=alert['body'], app_icon=get_file('ico.ico'))
+                    notification.notify(title=alert['type'], message=alert['body'], app_icon=get_file('icon.png'))
                     
                     
                 add(self.scroll_screen, self.result_list)
