@@ -255,7 +255,6 @@ class Sakai_Log(Screen):
 
             add(self.history_list, self.list_item)
         
-        self.screen
 
     def show(self):
         self.screen = Screen()
@@ -267,7 +266,9 @@ class Sakai_Log(Screen):
 
         self.create_history_list()
 
-        add(self.scroll_area, self.history_list)
+        empty = MDLabel(text="Empty History", pos_hint={'center_x':0.5, 'center_y':0.5}, font_style = 'H3', halign='center', theme_text_color="Hint")
+
+        add(self.scroll_area, self.history_list if len(self.history["message-log-info-list"]) > 0 else empty)
         add(self.screen, self.scroll_area, MDTopAppBar(title="Alert History", pos_hint={'top':1}, right_action_items=[["bell", lambda instance : screen_change("sakai_scrapper")], ["account", lambda instance : screen_change('sakai_login')], ["delete", lambda instance : self.clear_and_refresh()]]))
 
         return self.screen
