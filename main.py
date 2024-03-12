@@ -1,3 +1,5 @@
+import subprocess
+import sys
 import webbrowser
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -22,6 +24,7 @@ import os
 import json
 from Scrape import scrape
 from plyer import notification
+from background_notify import BackgroundNotification
 from threading import Thread
 
 
@@ -118,7 +121,7 @@ class Sakai_Login(Screen):
     def __init__(self, **kwargs):
         super(Sakai_Login, self).__init__(**kwargs)
         self.add_widget(self.show())
-        
+
     def next_field(self, instance):
         self.password.focus = True
 
@@ -173,13 +176,32 @@ class Sakai_Login(Screen):
         )
         self.confirmer.open()
         
+    def start_background_process(self):
+        try:
+            subprocess.Popen(['nohup', sys.executable, get_file('background_notify.py'), '&'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
+            print("Background notification started successfully.")
+        except Exception as e:
+            print(f"Error starting background notification: {e}")
+
     def confirm_options(self, option):
+        with open(get_file('credentials.json'), 'r') as cred:
+            credents = json.loads(cred.read())
+
+
         if option == 'yes':
             credentials = {
                 "studentID":self.studentID.text,
                 "password":self.password.text,
-                "mode":"Dark" if self.dark_mode == True else "Light" or "Light" if self.light_mode ==True else "Dark"
+                "mode":"Dark" if self.dark_mode == True else "Light" or "Light" if self.light_mode ==True else "Dark",
+                "background-started": credents.get("background-started", False)
             }
+
+            if not credentials["background-started"]:
+                self.start_background_process()
+                credentials["background-started"] = True
+
+
+
             with open(get_file('credentials.json'), 'w') as cred:
                 cred.write(json.dumps(credentials, indent=4))
             screen_change('sakai_scrapper')
