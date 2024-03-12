@@ -20,7 +20,7 @@ class BackgroundNotification:
         schedule.every(1).to(2).hours.do(self.create_notification)
         while True:
             schedule.run_pending()
-            logging.info(f'Notification Task Complete')
+            logging.info(f'...')
             time.sleep(120)
 
     def load_json_file(self, file_name):
@@ -46,7 +46,7 @@ class BackgroundNotification:
                         message=alert['body'], 
                         app_icon=self.get_file('icon.png')
                     )
-                logging.info(f'Notification Created Successfully. Number of alerts:', len(scrapped_data["message-info-list"]))
+                logging.info(f'Notification Created Successfully. Number of alerts: {len(scrapped_data["message-info-list"])}')
             else:
                 logging.error(f'Sorry There Seems to have been an error (Probably No Internet Connection or Invalid Login details.PLease verify details in credentials.json file)')
         else:
