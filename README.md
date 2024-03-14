@@ -1,5 +1,5 @@
 
-# SakaiAlerts
+# <img src="icon.png" alt="Image-Icon" style="vertical-align: middle; width: 60px;"> SakaiAlerts
 
 ## Introduction
 
@@ -32,9 +32,28 @@ pip install -r requirements.txt
 This command will install all the dependencies specified in the requirements.txt file.
 Make sure they have Python and pip installed on your system before running the command. 
 
-3.Open the `main.py` file and run it. Avoid modifying the JSON files for credentials.
+3. Open the `main.py` file and run it. Avoid modifying the JSON files for credentials.
 
 ##
+
+
+
+
+## Background Notification Feature
+
+SakaiAlerts also includes a background notification feature to enhance user experience and keep them informed about important alerts even when the application is not actively open. This feature allows the application to run in the background and periodically check for new alerts on the Sakai portal. When new alerts are detected, users receive notifications, providing a seamless way to stay updated without manual intervention.
+
+### How It Works
+
+The background notification feature utilizes a separate Python script (`background_notify.py`) to periodically scrape the Sakai portal for new alerts. This script runs independently in the background, allowing users to continue their work without disruptions.
+
+
+- The background notification process starts automatically when the main application is run.
+- Users will receive notifications for new alerts even if the main application is closed.
+- Ensure that the background script (`background_notify.py`) and (`credentials.json`) are not modified recklessly for the proper functioning of the background notification feature.
+
+
+
 
 
 ## Screenshots
@@ -108,20 +127,4 @@ Make sure they have Python and pip installed on your system before running the c
 
 - Enter login details carefully to avoid errors that may lead to scraping issues.
 - If scraping fails, verify login details and, if necessary, update them in the `credentials.json` file.
-
-
-
-## Background Notification Feature
-
-SakaiAlerts also includes a background notification feature to enhance user experience and keep them informed about important alerts even when the application is not actively open. This feature allows the application to run in the background and periodically check for new alerts on the Sakai portal. When new alerts are detected, users receive notifications, providing a seamless way to stay updated without manual intervention.
-
-### How It Works
-
-The background notification feature utilizes a separate Python script (`background_notify.py`) to periodically scrape the Sakai portal for new alerts. This script runs independently in the background, allowing users to continue their work without disruptions.
-
-
-- The background notification process starts automatically when the main application is run.
-- Users will receive notifications for new alerts even if the main application is closed.
-- Ensure that the background script (`background_notify.py`) and (`credentials.json`) are not modified recklessly for the proper functioning of the background notification feature.
-
 
