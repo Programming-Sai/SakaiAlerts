@@ -1,5 +1,5 @@
 
-# <img src="icon.png" alt="Image-Icon" style="vertical-align: middle; width: 60px;"> SakaiAlerts
+# <img src="icon.png" alt="Image-Icon" style="vertical-align: middle; width: 60px;margin-right: 30px"> SakaiAlerts
 
 ## Introduction
 
