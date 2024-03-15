@@ -319,12 +319,17 @@ class Sakai_Login(Screen):
 
         # Define the shebang line to add
         shebang_line = "#!" + sys.executable + "\n\n"
+
+        should_add_line = False
         
         with open(get_file('background_notify.py'), "r") as file:
+            if file.readline != shebang_line:
+                should_add_line = True
             content = file.read()
 
         with open(get_file('background_notify.py'), "w") as file:
-             file.write(shebang_line + content)
+            if should_add_line:
+                file.write(shebang_line + content)
 
     def start_background_process(self):
         """
@@ -332,10 +337,6 @@ class Sakai_Login(Screen):
         """
         try:
             subprocess.Popen(['nohup', sys.executable, get_file('background_notify.py'), '&'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
-            
-            # TODO Add logic to place `#!/usr/local/bin/python3` at the top of the `background_notify.py` file.
-            # TODO Also provide the functionality that allow for the restartng of the process if it has ended.
-
             print("Background notification started successfully.")
         except Exception as e:
             print(f"Error starting background notification: {e}")
