@@ -51,6 +51,7 @@ The background notification feature utilizes a separate Python script (`backgrou
 - The background notification process starts automatically when the main application is run.
 - Users will receive notifications for new alerts even if the main application is closed.
 - Ensure that the background script (`background_notify.py`) and (`credentials.json`) are not modified recklessly for the proper functioning of the background notification feature.
+- Also if for some reason, the background process is to be terminated, there is a function that restarts it again, ensuring a seamlessly infinte bacground process,
 
 
 
