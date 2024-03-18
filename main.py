@@ -804,12 +804,16 @@ class SakaiAlerts(MDApp):
         """
 
 
-        # Restarts the background opeartion if neccessary.
-        restart_background_process()
-        
+       
         # Fetching data from the `credentials.json` file
         with open(get_file('credentials.json'), 'r') as cred:
             credents = json.loads(cred.read())
+
+
+        # Restarts the background opeartion if neccessary. 
+        if credents.get("background-started"):
+            restart_background_process()
+        
 
 
         # Set theme settings
