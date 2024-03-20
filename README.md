@@ -150,4 +150,5 @@ or
 python3 setup.py py2app
 ```
 
-NB: If the standalone executable (the app) is not needed then before runnng ```pip install -r requirements.txt```or ```pip3 install -r requirements.txt``` remove `py2app==0.28.7` from the `requirements.txt` file and then run it
+NB: If the standalone executable (the app) is not needed then before runnng ```pip install -r requirements.txt```or ```pip3 install -r requirements.txt``` remove `py2app==0.28.7` from the `requirements.txt` file and then run it.
+Also keep in mind that if the executable is created, it may take a while. 
