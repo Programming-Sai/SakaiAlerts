@@ -3,5 +3,6 @@ kivymd==1.1.1
 plyer==2.1.0
 selenium==4.17.2
 schedule==1.2.1
+py2app==0.28.7
 
 
