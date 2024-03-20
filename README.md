@@ -29,6 +29,12 @@ git clone https://github.com/Programming-Sai/SakaiAlerts.git
 ```bash
 pip install -r requirements.txt
 ```
+
+or
+
+```bash
+pip3 install -r requirements.txt
+```
 This command will install all the dependencies specified in the requirements.txt file.
 Make sure they have Python and pip installed on your system before running the command. 
 
@@ -129,3 +135,19 @@ The background notification feature utilizes a separate Python script (`backgrou
 - Enter login details carefully to avoid errors that may lead to scraping issues.
 - If scraping fails, verify login details and, if necessary, update them in the `credentials.json` file.
 
+
+### Creating an application bundle
+
+In case a standalone executable is needed, navigate to the `setup.py` file and run:
+
+```bash
+python setup.py py2app
+```
+
+or 
+
+```bash
+python3 setup.py py2app
+```
+
+NB: If the standalone executable (the app) is not needed then before runnng ```pip install -r requirements.txt```or ```pip3 install -r requirements.txt``` remove `py2app==0.28.7` from the `requirements.txt` file and then run it
