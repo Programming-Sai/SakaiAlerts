@@ -130,6 +130,23 @@ def restart_background_process():
         except Exception as e:
             print(f"Error RESTARTING background notification: {e}")
 
+def grant_permissions_to_data_files():
+    """
+    Grant read and write permissions to all data files used in the script.
+    """
+    data_files = ['Sakai.json', 'Sakai-Log.json', 'credentials.json', 'background_notify.py']  
+    for file_name in data_files:
+        file_path = get_file(file_name) 
+        if os.path.exists(file_path):
+            if not os.access(file_path, os.R_OK) or not os.access(file_path, os.W_OK):
+                os.chmod(file_path, 0o666)  
+                print('Permission Grante')
+            else:
+                print('Permission Already Granted')
+        else:
+            print(f"File '{file_name}' does not exist.")
+
+
 
 
 
@@ -310,24 +327,22 @@ class Sakai_Login(Screen):
         )
         self.confirmer.open()
 
+
     def add_shebang_to_file(self):
         """
-            Adds shebang line at the top of teh `background_notify.py` file.
+        Adds shebang line at the top of the `background_notify.py` file.
         """
 
-        # Define the path to the background_notify.py file
-
-        # Define the shebang line to add
+        file_path = get_file('background_notify.py')
         shebang_line = "#!" + sys.executable + "\n\n"
-
         should_add_line = False
-        
-        with open(get_file('background_notify.py'), "r") as file:
-            if file.readline != shebang_line:
+
+        with open(file_path, "r") as file:
+            first_line = file.readline()
+            if first_line.strip() != shebang_line.strip():
                 should_add_line = True
             content = file.read()
-
-        with open(get_file('background_notify.py'), "w") as file:
+        with open(file_path, "w") as file:
             if should_add_line:
                 file.write(shebang_line + content)
 
@@ -803,7 +818,7 @@ class SakaiAlerts(MDApp):
             Build the application.
         """
 
-
+      
        
         # Fetching data from the `credentials.json` file
         with open(get_file('credentials.json'), 'r') as cred:
@@ -851,6 +866,10 @@ class SakaiAlerts(MDApp):
     
 
 if __name__ == '__main__':
+    
+    # Granting Permission to files
+    grant_permissions_to_data_files()
+
     SakaiAlerts().run()
 
 
