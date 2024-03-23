@@ -10,7 +10,7 @@ The purpose of SakaiAlerts is to provide users with a convenient way to access a
 
 
 
-
+        
 
 ## Setup Instructions
 
@@ -135,20 +135,3 @@ The background notification feature utilizes a separate Python script (`backgrou
 - Enter login details carefully to avoid errors that may lead to scraping issues.
 - If scraping fails, verify login details and, if necessary, update them in the `credentials.json` file.
 
-
-### Creating an application bundle
-
-In case a standalone executable is needed, navigate to the `setup.py` file and run:
-
-```bash
-python setup.py py2app
-```
-
-or 
-
-```bash
-python3 setup.py py2app
-```
-
-NB: If the standalone executable (the app) is not needed then before runnng ```pip install -r requirements.txt```or ```pip3 install -r requirements.txt``` remove `py2app==0.28.7` from the `requirements.txt` file and then run it.
-Also keep in mind that if the executable is created, it may take a while. 
