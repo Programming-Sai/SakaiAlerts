@@ -64,7 +64,6 @@ The background notification feature utilizes a separate Python script (`backgrou
 
 
 ## Screenshots
-## Screenshots
 
 | Dark Mode                                             | Light Mode                                             |
 |--------------------------------------------------------|--------------------------------------------------------|
