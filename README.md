@@ -64,61 +64,17 @@ The background notification feature utilizes a separate Python script (`backgrou
 
 
 ## Screenshots
+## Screenshots
 
-![New Alerts Screen (with some content in Dark Mode)](Screenshots/1.png)
-
-#
-
-![New Alerts Screen (with some content in Light Mode)](Screenshots/13.png)
-
-#
-
-![New Alerts Screen (Scraping gone wrong with error popup in Dark Mode)](Screenshots/2.png)
-
-#
-
-![New Alerts Screen (Scraping gone wrong with error popup in Light Mode)](Screenshots/11.png)
-
-#
-
-![New Alerts Screen (during scraping process Dark Mode)](Screenshots/6.png)
-
-#
-
-![New Alerts Screen (during scraping process Light Mode)](Screenshots/15.png)
-
-#
-
-![New Alerts Screen (empty alerts Dark Mode)](Screenshots/7.png)
-
-#
-
-![New Alerts Screen (empty alerts Dark Mode)](Screenshots/8.png)
-
-#
-
-![Alerts History Screen  (cleared history Dark Mode)](Screenshots/5.png)
-
-#
-
-![Alerts History Screen  (cleared history Light Mode)](Screenshots/12.png)
-
-
-#
-
-![Alerts History Screen (with some content in Dark Mode)](Screenshots/3.png)
-
-#
-
-![Alerts History Screen (with some content in Light Mode)](Screenshots/14.png)
-
-#
-
-![Login Info Screen (Dark Mode)](Screenshots/4.png)
-
-#
-
-![Login Info Screen (Light Mode)](Screenshots/9.png)
+| Dark Mode                                             | Light Mode                                             |
+|--------------------------------------------------------|--------------------------------------------------------|
+| <img src="Screenshots/1.png" alt="New Alerts Screen (with some content)" width="450"> | <img src="Screenshots/13.png" alt="New Alerts Screen (with some content)" width="450"> |
+| <img src="Screenshots/2.png" alt="Scraping error in Dark Mode" width="450"> | <img src="Screenshots/11.png" alt="Scraping error in Light Mode" width="450"> |
+| <img src="Screenshots/6.png" alt="During scraping process in Dark Mode" width="450"> | <img src="Screenshots/15.png" alt="During scraping process in Light Mode" width="450"> |
+| <img src="Screenshots/7.png" alt="Empty alerts in Dark Mode" width="450"> | <img src="Screenshots/8.png" alt="Empty alerts in Light Mode" width="450"> |
+| <img src="Screenshots/5.png" alt="Cleared history in Dark Mode" width="450"> | <img src="Screenshots/12.png" alt="Cleared history in Light Mode" width="450"> |
+| <img src="Screenshots/3.png" alt="Alerts with content in Dark Mode" width="450"> | <img src="Screenshots/14.png" alt="Alerts with content in Light Mode" width="450"> |
+| <img src="Screenshots/4.png" alt="Login Info Screen in Dark Mode" width="450"> | <img src="Screenshots/9.png" alt="Login Info Screen in Light Mode" width="450"> |
 
 
 ## App Guidelines
